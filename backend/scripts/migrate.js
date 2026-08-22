@@ -13,8 +13,8 @@
 'use strict';
 
 const { Client } = require('pg');
-const fs         = require('fs');
-const path       = require('path');
+const fs = require('fs');
+const path = require('path');
 
 // Load environment variables from .env file
 require('dotenv').config({ path: path.join(__dirname, '..', '.env') });
@@ -69,7 +69,7 @@ async function runMigrations() {
       }
 
       const filePath = path.join(MIGRATIONS_DIR, file);
-      const sql      = fs.readFileSync(filePath, 'utf8');
+      const sql = fs.readFileSync(filePath, 'utf8');
 
       // Wrap each migration in a transaction
       await client.query('BEGIN');

@@ -1,23 +1,7 @@
-/**
- * src/config/database.js
- *
- * What: Creates and exports a PostgreSQL connection pool.
- *
- * Why a pool?
- *   A pool maintains multiple open connections and reuses them.
- *   Opening a new TCP connection to PostgreSQL for every HTTP request is expensive.
- *   The pool hands out existing connections and waits if all are busy.
- *
- * Why pg.Pool and not pg.Client?
- *   pg.Client is a single connection. If two requests arrive simultaneously,
- *   one waits for the other to finish. pg.Pool handles concurrency correctly.
- *
- * Cross-platform:
- *   The pg library reads DATABASE_URL as a standard connection string,
- *   which works identically on Linux and Windows.
- */
-
 'use strict';
+
+const path = require('path');
+require('dotenv').config({ path: path.join(__dirname, '..', '..', '.env') });
 
 const { Pool } = require('pg');
 

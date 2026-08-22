@@ -43,4 +43,4 @@ docker-compose.override.yml
 tmp/
 temp/
 frontend-react/
-
+docs/

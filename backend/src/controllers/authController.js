@@ -1,8 +1,3 @@
-/**
- * src/controllers/authController.js
- *
- * HTTP Request handlers for authentication.
- */
 
 'use strict';
 
